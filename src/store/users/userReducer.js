@@ -5,7 +5,6 @@ const initialState = {
   loading: false
 };
 const User = (state, action) => {
-  console.log(state, action.type);
   if (typeof state === 'undefined') {
     state = initialState;
   }

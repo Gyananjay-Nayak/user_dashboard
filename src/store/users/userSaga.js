@@ -68,7 +68,6 @@ function* userDetails(action) {
     const apiResponse = yield call(axios.get, url);
 
     const response = yield call(checkHttpStatus, apiResponse);
-    console.log(response);
     if (response && response.status === 200) {
       const responseData = {
         statusCode: 200,
@@ -99,7 +98,6 @@ function* userCreate(action) {
     const apiResponse = yield call(axios.post, url, action.payload);
 
     const response = yield call(checkHttpStatus, apiResponse);
-    console.log(response);
     if (response && response.status === 200) {
       const responseData = {
         statusCode: 200,
@@ -132,7 +130,6 @@ function* userUpdate(action) {
     const apiResponse = yield call(axios.put, url, action.payload);
 
     const response = yield call(checkHttpStatus, apiResponse);
-    console.log(response);
     if (response && response.status === 200) {
       const responseData = {
         statusCode: 200,
@@ -165,7 +162,6 @@ function* userDelete(action) {
     const apiResponse = yield call(axios.delete, url);
 
     const response = yield call(checkHttpStatus, apiResponse);
-    console.log(response);
     if (response && response.status === 200) {
       const responseData = {
         statusCode: 200,

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Tabs, Tab, useTheme, useMediaQuery } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SideMenu from './sideMenu';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [value, setValue] = useState(0);
@@ -25,7 +26,7 @@ function Header() {
                 onChange={(e, value) => setValue(value)}
                 textColor="inherit"
                 value={value}>
-                <Tab label="User" />
+                <Tab label="User" to="/user" component={Link} />
                 <Tab label="Services" />
                 <Tab label="About Us" />
               </Tabs>

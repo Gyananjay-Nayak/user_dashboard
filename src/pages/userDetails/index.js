@@ -35,14 +35,12 @@ const UserDetails = () => {
   }, [dispatch, id]);
 
   const userDetails = useSelector((state) => state.User.userDetails);
-  console.log(userDetails);
   if (!userDetails) {
     // Handle loading state or error
     return <div>Loading...</div>;
   }
 
   const handleUpdateUser = (e) => {
-    console.log('update user', e);
     dispatch(updateUserRequest(e));
   };
   const handleDeleteUser = (id) => {
