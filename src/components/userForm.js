@@ -66,7 +66,6 @@ const UserForm = ({ isUpdate, existingUserData, onSubmit, handleDeleteUser }) =>
     email: isUpdate ? existingUserData.email : '',
     image: isUpdate ? existingUserData.image : ''
   });
-  console.log(existingUserData);
   const [errors, setErrors] = useState({
     email: '',
     phone: ''
@@ -93,7 +92,6 @@ const UserForm = ({ isUpdate, existingUserData, onSubmit, handleDeleteUser }) =>
         phone: phoneNumberError
       });
     } else {
-      console.log('Form submitted:', formData);
       onSubmit(formData);
     }
   };

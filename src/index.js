@@ -12,11 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#CD8D7A'
-    },
     secondary: {
-      main: '#DBCC95'
+      main: '#B4D4FF'
     }
   }
 });

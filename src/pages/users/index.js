@@ -40,7 +40,7 @@ const StyledTableContainer = styled(TableContainer)({
 });
 
 const StyledCreateButton = styled(Button)({
-  margin: 'auto'
+  // margin: 'auto'
 });
 
 const Users = () => {
@@ -60,9 +60,6 @@ const Users = () => {
     createUser: state.User.createUser
   }));
 
-  // useEffect(() => {
-  //   dispatch(userListRequest());
-  // }, []);
   useEffect(() => {
     const limit = usersPerPage;
     const skip = (page - 1) * usersPerPage;
@@ -105,14 +102,25 @@ const Users = () => {
     <StyledDiv>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <StyledPaper>
+          <StyledPaper sx={{ marginBottom: '10px' }}>
             <Typography variant="h4" gutterBottom>
               User List
             </Typography>
           </StyledPaper>
-          <StyledCreateButton onClick={handleCreateButtonClick} variant="contained" color="primary">
-            Create User
-          </StyledCreateButton>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              alignItems: 'center',
+              padding: '10px'
+            }}>
+            <StyledCreateButton
+              onClick={handleCreateButtonClick}
+              variant="contained"
+              color="primary">
+              Create User
+            </StyledCreateButton>
+          </Box>
         </Grid>
         <Grid item xs={12}>
           <StyledTableContainer component={Paper}>
@@ -134,13 +142,7 @@ const Users = () => {
               )}
             </Table>
           </StyledTableContainer>
-          <Pagination
-            // count={Math.ceil(userList.length / usersPerPage)}
-            count={totalPages}
-            page={page}
-            onChange={handleChangePage}
-            color="primary"
-          />
+          <Pagination count={totalPages} page={page} onChange={handleChangePage} color="primary" />
         </Grid>
       </Grid>
 
