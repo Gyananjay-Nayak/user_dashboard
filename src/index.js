@@ -3,11 +3,42 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Provider } from 'react-redux';
+import configureStore from './store';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#CD8D7A'
+    },
+    secondary: {
+      main: '#DBCC95'
+    }
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={configureStore}>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            limit={1}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 

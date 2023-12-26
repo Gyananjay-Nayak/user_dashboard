@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john.doe@example.com",
+    "contact": "123-456-7890"
+  },
+  {
+    "id": 2,
+    "username": "jane_smith",
+    "email": "jane.smith@example.com",
+    "contact": "987-654-3210"
+  },
+  {
+    "id": 3,
+    "username": "bob_jones",
+    "email": "bob.jones@example.com",
+    "contact": "555-123-4567"
+  },
+  {
+    "id": 4,
+    "username": "alice_wonderland",
+    "email": "alice.wonderland@example.com",
+    "contact": "333-888-9999"
+  },
+  {
+    "id": 5,
+    "username": "charlie_brown",
+    "email": "charlie.brown@example.com",
+    "contact": "777-444-5555"
+  }
+]
